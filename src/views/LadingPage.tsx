@@ -103,21 +103,6 @@ const Testimonial = ({ name, role, text, image, delay = 0 }: any) => {
   );
 };
 
-// Componente para el botón de navegación
-const NavButton = ({ children, onClick, active = false }: any) => {
-  return (
-    <button
-      onClick={onClick}
-      className={`px-4 py-2 rounded-full transition-all duration-300 ${
-        active
-          ? "bg-primary text-white"
-          : "bg-white/20 text-white hover:bg-white/30"
-      }`}
-    >
-      {children}
-    </button>
-  );
-};
 
 // Componente principal de la landing page
 export const LandingPage = () => {
@@ -129,7 +114,6 @@ export const LandingPage = () => {
   });
 
   // Animaciones para el parallax
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   return (
